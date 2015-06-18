@@ -22,7 +22,18 @@
         count    : 50,
         callback : function(messages) {
             p.each( messages[0], function(m){
-                output.innerHTML = '<p><i class="' + m.avatar + '"></i><span>' +  m.text.replace( /[<>]/ig, '' ) + '</span></p>' + output.innerHTML
+                var content = '<p><i class="' + m.avatar + '"></i><span>';
+
+                if(m.text) {
+                    content += m.text.replace( /[<>]/ig, '' );
+                }
+                if(m.gif) {
+                    console.log('giphy added...');
+                    content += '<img src="' + m.gif + '">'
+                }
+                content += '</span></p>';
+
+                output.innerHTML = content + output.innerHTML; 
             } );
         }
     });
