@@ -64,13 +64,15 @@
             } else {
                 presence.textContent = 'Only you are online';
             }
-            if(m.action === 'join') {
-                var who = (actionUser) ? '<i class="' + actionUser + '"></i>' : '<em>You </em>';
-                output.innerHTML = '<p>' + who + '<span><em>joined the room</em></span></p>' + output.innerHTML; 
-            }
-            if(m.action === 'leave') {
-                output.innerHTML = '<p><i class="' + actionUser + '"></i><span><em>left the room</em></span></p>' + output.innerHTML; 
-            }
+            // buggy. I fixed this later.
+            
+            // if(m.action === 'join') {
+            //     var who = (actionUser) ? '<i class="' + actionUser + '"></i>' : '<em>You </em>';
+            //     output.innerHTML = '<p>' + who + '<span><em>joined the room</em></span></p>' + output.innerHTML; 
+            // }
+            // if(m.action === 'leave') {
+            //     output.innerHTML = '<p><i class="' + actionUser + '"></i><span><em>left the room</em></span></p>' + output.innerHTML; 
+            // }
         }
     });
 
